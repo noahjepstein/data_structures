@@ -1,0 +1,20 @@
+README - Noah J. Epstein
+	     10/4/13
+
+
+
+"main.cpp" tests TOT.cpp, Transcript.cpp, Semester.cpp, and Course.cpp.
+There are four respective "mains". Comment in and out each one
+individually to test that respective part of the program. Main
+for Course testing only tests the course class, while main
+for the Semester class tests both Semesters and Courses. The 
+Transcript main tests Transcripts, Semesters, and Courses,
+and TOT main tests TOT, Transcripts, Semesters, and Courses. 
+Each data structure uses its subjugate data structures, but not vice
+versa. Courses exist separately from TOTs, but TOTs use Courses. 
+
+Each main accesses and uses public member functions in the appropriate classes.
+
+I'm getting some weird infinite looping bug, but I can't find it. 
+
+Thanks.

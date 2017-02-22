@@ -1,0 +1,57 @@
+readme
+
+hw3 - factory simulator
+Noah J. Epstein
+10/22/2013
+
+Some high-level details about this factory-simulation program:
+
+This program simulates the function of a package-processing facility. It has 
+provisions for multiple assembly lines with multiple workers per assembly
+line, but this version only accomodates single workers and single assembly 
+lines. 
+
+The facility takes in a bunch of package data from a file, parses through it,
+and stores it in a prebuffering queue. As the packages reach designated 
+arrival times, they are moved from this first queue to an assembly line class. 
+
+The assembly line does work on packages at specified time intervals as 
+determined by the factory's timer. An assembly line does work on one package
+at a time, on a first come, first serve basis. When the packages are completed,
+they ship from the assembly line back to the factory. 
+
+The factory takes the "assembled" packages and stores them in a third queue, 
+a postbuffer. When all packages have been assembled and shipped off the 
+assembly lines, they're printed from the postbuffer.
+
+Incidentally, the program design doesn't require additional destructors. When
+the program pops from a queue, it deletes the node. You pop all nodes in the 
+prebuffer when you send them to assembly, all the nodes in the assembly queue 
+when you ship to the postbuffer, and all the nodes in the postbuffer when 
+you print. All queues are implicitly destroyed as part of the function of the 
+program. Only the empty pointers to first nodes require deletion. 
+
+
+-------------------------------------------------------------------------------
+                                    DIAGRAM
+-------------------------------------------------------------------------------
+
+                              packages from file
+                                       |
+                                       |
+                                       |
+                                       |
+prebuffer <------prearrival----------  V
+ (queue)                            FACTORY
+    |______________arrival______>(tracks time)---shipping--->postbuffer (queue)
+                                    |      ^                     |
+                                    |      |                     |
+                                    |      |                     |
+                                    |      |                     |
+                                    |      |                     |
+                                    V      |                     V
+                                    assembly                  OUTPUT
+                                     (queue)
+                                   (does work)
+
+_______________________________________________________________________________

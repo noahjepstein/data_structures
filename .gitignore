@@ -1,0 +1,5 @@
+*compile
+core.*
+token*
+a.out
+*.dat

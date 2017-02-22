@@ -1,0 +1,34 @@
+#!/bin/sh
+
+#
+# run all the tests
+#
+
+	cp /dev/null test_results
+
+	for t in test*-?
+	do
+		echo "Testing $t..."
+		rm -f core.*
+
+		echo ":::: Test $t :::::" >> test_results
+		./$t  > $$ 2>&1
+		RV=$?
+		cat $$ >> test_results
+
+		if test $RV -gt 127
+		then
+			echo "$t CRASHED"
+			rm -f core.*
+		fi
+
+		echo "Output of $t: "
+		cat $$
+
+		echo ""
+		echo "" >> test_results
+	done
+
+	echo "Note: you can run any individual test by"
+	echo "      typing  ./test#-L  or ./test#-A where"
+	echo "      # is the solution number."

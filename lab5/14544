@@ -1,0 +1,45 @@
+==========v Constructor Tests v=======
+constructed empty seq
+constructed another empty seq
+constructed a few non-empty seqs w/ overloaded constructor
+==========^ Constructor Tests ^=======
+
+==========v isEmpty Tests v=======
+empty sequences are empty. default constructor works
+empty sequences are still empty. default con works
+i guess the overloaded constructor works
+==========^ isEmpty Tests ^=======
+
+==========v print() Tests v=======
+test print for 1-item list
+Expected: a returned: 
+a 
+
+test print for many-item list
+expected: a b b a b b a b a b b a b   returned: 
+          
+a b b a b b a b a b b a b 
+expected: b a b a b b a b a b b a b b a b a b b a b  returned: 
+          
+b a b a b b a b a b b a b b a b a b b a b 
+==========^ print() Tests ^=======
+
+==========v size() Tests v=======
+==========^ size() Tests ^=======
+
+==========v first() Tests v=======
+==========^ first() Tests ^=======
+==========v rest() Tests v=======
+
+==========^ rest() Tests ^=======
+
+==========v concatenate() Tests v=======
+==========^ concatenate() Tests ^=======
+
+==========v expand Tests v=======
+test expand(concat another sequence n times
+expected: a followed by 1000 b's returned: 
+a b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b b 
+
+==========^ expand Tests ^=======
+

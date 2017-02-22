@@ -1,0 +1,3 @@
+g++ -g -Wall -Wextra facmain.cpp factoryP.cpp assemblyline.cpp queue.cpp -o simp  
+g++ -g -Wall -Wextra facmain.cpp factoryU.cpp assemblyline.cpp queue.cpp -o simu  
+g++ -g -Wall -Wextra facmain.cpp factoryT.cpp assemblyline.cpp queue.cpp -o simt 

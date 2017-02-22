@@ -1,0 +1,52 @@
+#!/bin/sh
+#
+# do_tests
+#
+#   uses main.cpp to produce mainL.cpp and mainA.cpp
+#   then compiles mainL.cpp and mainA.cpp with each of the .o files
+#   then runs each one
+#
+
+	if test ! -f main.cpp
+	then
+		echo "Missing main.cpp -- please make one"
+		exit 1
+	fi
+
+	echo "Generating mainL.cpp and mainA.cpp..."
+
+	#
+	# make all the main files
+	#
+	for T in A L
+	do
+		sed '/===/,$s/\([Ss]\)equenceX/\1equence'$T'/g' main.cpp \
+		> main$T.cpp
+		chmod 644 main$T.cpp
+	done
+
+	#
+	# now create all the binaries
+	#
+
+	echo "Compiling and linking..."
+
+	for s in sol*
+	do
+		NUM=$(echo $s | sed 's/sol//' )
+		echo "Building Version $NUM..."
+		cd $s
+		g++ -I. ../mainA.cpp sequenceA.o -o ../test$NUM-A
+		g++ -I. ../mainL.cpp sequenceL.o -o ../test$NUM-L
+		cd ..
+		echo ""
+	done
+
+	printf "Done.. Do you want to run all the tests now? "
+	read ANS
+	case "$ANS" in 
+		y*|Y)	;;
+		*)	exit 0;;
+	esac
+
+	./run_tests

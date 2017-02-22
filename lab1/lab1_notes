@@ -1,0 +1,22 @@
+{50, 12, 33}
+//to print
+for(i=o; i<3; i++_){
+  cout << arr[i];
+}
+
+//printing linked lists
+
+struct Node{
+  int value;
+  Node* next;
+};
+
+print()
+{
+  Node* iter
+  iter = head;
+
+  while(iter!=NULL)
+  {
+    cout << iter->value << ", ";
+    iter = iter->next;
